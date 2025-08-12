@@ -1,5 +1,5 @@
 
-# from utils.model_loader import ModelLoader
+from utils.model_loader import ModelLoader
 from prompt_library.prompt import SYSTEM_PROMPT
 from langgraph.graph import StateGraph, MessagesState, END, START
 from langgraph.prebuilt import ToolNode, tools_condition
@@ -11,7 +11,12 @@ from langgraph.prebuilt import ToolNode, tools_condition
 
 class GraphBuilder():
     def __init__(self):
-        self.tools = []
+        self.tools = [ 
+                # WeatherInfoTool(), 
+                # PlaceSearchTool(), 
+                # CalculatorTool(),
+                # CurrencyConverterTool()
+            ]
         self.system_prompt = SYSTEM_PROMPT
 
     def agent_function(self, state:MessagesState):
